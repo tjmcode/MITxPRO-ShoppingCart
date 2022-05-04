@@ -42,7 +42,7 @@ localhost:8080
 
 * Example of app styling...
 
-<p align="left"><img src=".\app-styling.png" width="720" title="App Styling..."></p>
+<p align="left"><img src=".\app-running.png" width="720" title="App Running..."></p>
 
 
 ## Help
