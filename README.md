@@ -36,11 +36,11 @@ http-server -c-1
 localhost:8080
 ```
 
-* Demonstration of validaproject install...
+* Demonstration of valid project install/startup...
 
 <p align="left"><img src=".\app-example.png" width="720" title="Server Valid Startup..."></p>
 
-* Example of app styling...
+* Example of app running...
 
 <p align="left"><img src=".\app-running.png" width="720" title="App Running..."></p>
 
