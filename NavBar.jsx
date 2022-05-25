@@ -3,7 +3,7 @@
 // #region  P R E A M B L E
 // #region  D O C U M E N T A T I O N
 /*
- *      Title:    MicroCODE Common JavaScript Template
+ *      Title:    MIT xPRO NavBar
  *      Module:   Modules (./NavBar.js)
  *      Project:  MicroCODE Common Library
  *      Customer: Internal
@@ -23,8 +23,7 @@
  *      DESCRIPTION:
  *      ------------
  *
- *      This module implements the MicroCODE's Common JavaScript Template.
- *      This file is copied to start all MicroCODE JavaScript code files.
+ *      This module implements a Nav Bar that loads a Shopping Cart.
  *
  *
  *      REFERENCES:
@@ -62,7 +61,7 @@
  *
  *  Date:         By-Group:   Rev:     Description:
  *
- *  03-May-2022   TJM-MCODE  {0001}    New module for a Bank ATM App.
+ *  03-May-2022   TJM-MCODE  {0001}    New module for a Nav Bar App.
  *
  *
  */
