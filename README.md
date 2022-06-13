@@ -28,7 +28,7 @@ npm install -- global http-server
 
 * Use "http-server" command in the project folder to start the HTTP Server with *no caching*.
 ```
-http-server -c-1
+npx http-server -c-1
 ```
 
 * Navigate your Browser to...
