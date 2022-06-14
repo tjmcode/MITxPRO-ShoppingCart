@@ -317,7 +317,7 @@ const Products = (props) =>
                     {item.name} Cost ${item.cost} Available: {item.instock}
                 </Button>
                 <br />
-                <input name={item.name} max={item.instock} type="submit" onClick={addToCart}></input>
+                <input name={item.name} max={item.instock} type="submit" value="Add to Cart" onClick={addToCart}></input>
             </li>
         );
     });
