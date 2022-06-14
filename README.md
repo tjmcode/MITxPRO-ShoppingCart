@@ -45,6 +45,14 @@ localhost:8080
 <p align="left"><img src=".\app-running.png" width="720" title="App Running..."></p>
 
 
+* Demonstration of the Shopping Cart App...
+
+<video id="demo-video" style="border-style:solid; border-width:2px" src="https://user-images.githubusercontent.com/8990676/158492176-6917b8ce-2b35-4b26-9e87-8886f31f3998.mp4" width="1024" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="autoplay *" loop autoplay autobuffer controls muted>
+Your browser does not support the HTML5 player.
+</video>
+</p>
+
+
 ## Help
 
 This is an unsupported demonstation project.
