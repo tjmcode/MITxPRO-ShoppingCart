@@ -70,6 +70,8 @@ const products = [
     {name: "Cabbage", country: "USA", cost: 1, instock: 8},
 ];
 
+const photos = ["apple.png", "orange.png", "beans.png", "cabbage.png"];
+
 // #endregion
 
 // #region  P R I V A T E   F I E L D S
@@ -128,7 +130,7 @@ const ShoppingCart = (props) =>
 
 
 /*
- *
+ * useDataApi() -- call a server for a data list.
  */
 const useDataApi = (initialUrl, initialData) =>
 {
@@ -244,23 +246,64 @@ const Products = (props) =>
 
     console.log(`Rendering Products ${JSON.stringify(data)}`);
 
-    // Fetch Data
+    // adds an item to the Cart
     const addToCart = (e) =>
     {
-        let name = e.target.name;
+        let name = e.currentTarget.name;
+        let instock = e.currentTarget.max;
+
+        console.log(`name=${name} instock=${instock}`);
+
+        // check if its in stock ie item.instock > 0
+        if (instock <= 0) return; // zero items in stock
+
+        // get item with name from stock and update stock
         let item = items.filter((item) => item.name == name);
-        console.log(`add to Cart ${JSON.stringify(item)}`);
+
+        console.log(`Adding Item to Cart: ${JSON.stringify(item)}`);
+
+        let newItems = items.map((item) =>
+        {
+            if (item.name == name)
+            {
+                item.instock--;
+            }
+            return item;
+        });
+
+        setItems([...newItems]);
         setCart([...cart, ...item]);
+
         doFetch(query);
     };
 
+    // delete item from Cart, adds back to stock
     const deleteCartItem = (index) =>
     {
+        let name = cart[index].name;
+
+        console.log(`name=${name} index=${index}`);
+
+        // get item with name from stock and update stock
+        let item = items.filter((item) => item.name == name);
+
+        console.log(`Returning Item to Stock: ${JSON.stringify(item)}`);
+
+        let newItems = items.map((item) =>
+        {
+            if (item.name == name)
+            {
+                item.instock++;
+            }
+            return item;
+        });
+
+        setItems([...newItems]);
+
         let newCart = cart.filter((item, i) => index != i);
+
         setCart(newCart);
     };
-
-    const photos = ["apple.png", "orange.png", "beans.png", "cabbage.png"];
 
     let list = items.map((item, index) =>
     {
@@ -271,9 +314,10 @@ const Products = (props) =>
             <li key={index}>
                 <Image src={photos[index % 4]} width={70} roundedCircle></Image>
                 <Button variant="primary" size="large">
-                    {item.name}:{item.cost}
+                    {item.name} Cost ${item.cost} Available: {item.instock}
                 </Button>
-                <input name={item.name} type="submit" onClick={addToCart}></input>
+                <br />
+                <input name={item.name} max={item.instock} type="submit" onClick={addToCart}></input>
             </li>
         );
     });
@@ -292,7 +336,7 @@ const Products = (props) =>
                     eventKey={1 + index}
                 >
                     <Card.Body>
-                        $ {item.cost} from {item.country}
+                        ${item.cost} from {item.country}  [ Click to remove ]
                     </Card.Body>
                 </Accordion.Collapse>
             </Card>
@@ -322,7 +366,13 @@ const Products = (props) =>
         return newTotal;
     };
 
-    // TODO: implement the restockProducts function
+    const leaveStore = () =>
+    {
+        setCart([]);
+        checkOut();
+    };
+
+    // Connect to our StrapiDB API and get a fresh list of products
     const restockProducts = (url) =>
     {
         doFetch(url);
@@ -348,7 +398,7 @@ const Products = (props) =>
                 </Col>
                 <Col>
                     <h1>CheckOut </h1>
-                    <Button onClick={checkOut}>CheckOut $ {finalList().total}</Button>
+                    <Button onClick={leaveStore}>CheckOut ${finalList().total}</Button>
                     <div> {finalList().total > 0 && finalList().final} </div>
                 </Col>
             </Row>
@@ -366,6 +416,7 @@ const Products = (props) =>
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}
                     />
+                    <br />
                     <button type="submit">ReStock Products</button>
                 </form>
             </Row>
