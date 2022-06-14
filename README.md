@@ -78,6 +78,8 @@ Contributors names and contact info
 
 ## Version History
 
+* 0.2
+    * Refactored with React Components and StrapiDB interface.
 * 0.1
     * Refactored into the MicroCODE [MCODE] style and templates.
     * See [commit change]() or See [release history]()
@@ -86,8 +88,8 @@ Contributors names and contact info
 
 ## Future Development
 
-* 0.2
-    * ...
+* 0.3
+    * Live pictures after restock
 
 
 ## License
