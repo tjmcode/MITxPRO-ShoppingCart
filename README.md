@@ -47,7 +47,7 @@ localhost:8080
 
 * Demonstration of the Shopping Cart App...
 
-<video id="demo-video" style="border-style:solid; border-width:2px" src="https://user-images.githubusercontent.com/8990676/158492176-6917b8ce-2b35-4b26-9e87-8886f31f3998.mp4" width="1024" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="autoplay *" loop autoplay autobuffer controls muted>
+<video id="demo-video" style="border-style:solid; border-width:2px" src="https://user-images.githubusercontent.com/8990676/173474641-5ed98ea5-77a6-459c-9a08-6bf363521c68.mp4" width="1024" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="autoplay *" loop autoplay autobuffer controls muted>
 Your browser does not support the HTML5 player.
 </video>
 </p>
